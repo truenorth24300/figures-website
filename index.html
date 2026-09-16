@@ -3,57 +3,259 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="文芸誌Figuresの公式サイトイメージ。素材未提供時の構成とデザインを確認するHTMLプレビューです。" />
-    <title>Figures | 公式サイトイメージ</title>
+    <meta name="description" content="文芸誌Figuresの公式サイトイメージ。既刊PDFをもとに、表紙・目次・紹介投稿・通信欄を構成したプレビューです。" />
+    <title>Figures | revue littéraire</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" />
     <style>
-      /* Style: 「余白の書架」— 初期案の写真、深碧の罫線、左右非対称の余白をそのまま引き継ぐ単体HTML。 */
-      :root{--ink:#202320;--soft:#5e615d;--paper:#f6f4ee;--line:#cfcfc6;--teal:#1e5b5a;--serif:"Noto Serif JP",serif;--display:"Cormorant Garamond","Noto Serif JP",serif;--sans:"Noto Sans JP",sans-serif}
-      *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--paper)}body{min-width:320px;margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.site{max-width:1440px;margin:auto;overflow:hidden;border-right:1px solid var(--line);border-left:1px solid var(--line)}
-      .preview-ribbon{display:flex;justify-content:space-between;gap:20px;padding:9px 38px;border-bottom:1px solid var(--line);color:var(--soft);font-size:9px;letter-spacing:.05em}.preview-ribbon b{color:var(--teal);font-weight:600}.site-header{position:sticky;top:0;z-index:5;background:rgba(246,244,238,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(13px)}.header-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:76px;padding:0 38px}.parent-link{justify-self:start;display:inline-flex;gap:6px;align-items:center;color:var(--soft);font-size:10px;letter-spacing:.08em;text-transform:uppercase}.parent-link:hover{color:var(--teal)}.brand{display:inline-flex;gap:10px;align-items:center;font:600 32px/1 var(--display);letter-spacing:-.035em}.brand img{width:31px;height:31px;object-fit:contain}.nav{justify-self:end;display:flex;gap:23px}.nav a{position:relative;padding:7px 0;color:#444742;font-size:12px;letter-spacing:.04em}.nav a:after{position:absolute;bottom:1px;left:0;width:0;height:1px;background:var(--teal);content:"";transition:width .18s cubic-bezier(.23,1,.32,1)}.nav a:hover:after{width:100%}
-      .hero{position:relative;display:grid;grid-template-columns:minmax(390px,1.06fr) minmax(280px,.94fr);gap:6vw;min-height:620px;padding:76px 38px 75px 104px;border-bottom:1px solid var(--line)}.spine{position:absolute;top:0;bottom:0;left:0;display:flex;flex-direction:column;justify-content:space-between;width:61px;padding:25px 22px;border-right:1px solid var(--line);color:var(--teal)}.spine span{font-size:9px;letter-spacing:.16em;writing-mode:vertical-rl}.spine i{font:500 22px var(--display);font-style:normal}.hero-copy{align-self:center;padding-bottom:10px}.eyebrow{display:flex;gap:8px;align-items:center;margin:0 0 16px;color:var(--teal);font-size:11px;font-weight:600;letter-spacing:.15em}.eyebrow:before{display:block;width:22px;height:1px;background:currentColor;content:""}.hero h1{margin:0;font:600 clamp(86px,12.1vw,176px)/.75 var(--display);letter-spacing:-.065em}.hero-deck{margin:34px 0 30px;font:400 clamp(18px,2vw,24px)/1.85 var(--serif);letter-spacing:.08em}.status{display:flex;flex-wrap:wrap;gap:7px;align-items:center;color:var(--soft);font-size:11px;letter-spacing:.08em}.status-dot{width:7px;height:7px;border-radius:50%;background:var(--teal)}.status em{margin-left:6px;font:500 10px var(--display);letter-spacing:.13em}.text-link{display:inline-flex;gap:9px;align-items:center;margin-top:35px;padding-bottom:8px;border-bottom:1px solid var(--ink);font-size:13px;transition:transform .16s ease,color .16s ease}.text-link:hover{color:var(--teal);transform:translateX(4px)}.hero-art{position:relative;align-self:center;justify-self:end;width:min(87%,350px);padding:12px;border:1px solid var(--teal);background:var(--paper)}.hero-art:before{display:none}.hero-art img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.86)}.hero-art p{margin:11px 0 0;color:var(--soft);font:500 10px var(--display);letter-spacing:.13em;text-align:right}.image-index{position:absolute;top:-22px;left:-28px;color:var(--teal);font:500 14px var(--display)}
-      .latest{display:grid;grid-template-columns:61px minmax(0,1fr) 33%;border-bottom:1px solid var(--line)}.section-index{display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:24px 0;border-right:1px solid var(--line);color:var(--teal)}.section-index b{font:500 24px var(--display)}.section-index span{font-size:9px;letter-spacing:.16em;writing-mode:vertical-rl}.latest-main{padding:87px min(7vw,104px) 93px}.latest-heading{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:55px}h2{margin:0;font:500 clamp(38px,4vw,61px)/1.24 var(--serif);letter-spacing:-.06em}h2 em{color:var(--teal);font-style:normal}.issue-empty{position:relative;display:grid;grid-template-columns:45px 1fr;min-height:344px;border:1px solid var(--ink);background:rgba(255,255,255,.22)}.issue-spine{padding:16px 14px;border-right:1px solid var(--ink);font:500 11px var(--display);letter-spacing:.12em;writing-mode:vertical-rl}.issue-body{padding:40px 44px 58px}.book-symbol{display:block;color:var(--teal);font:500 37px/1 var(--display)}.issue-tag{margin:27px 0 11px;color:var(--teal);font-size:11px;font-weight:600;letter-spacing:.12em}.issue-body h3{margin:0;font:500 27px/1.5 var(--serif);letter-spacing:.06em}.issue-body>p:last-child{max-width:370px;margin:17px 0 0;color:var(--soft);font-size:12px;line-height:1.9}.issue-foot{position:absolute;right:0;bottom:0;left:45px;display:grid;grid-template-columns:1.2fr .42fr 1.4fr .4fr;align-items:center;height:42px;padding:0 20px;border-top:1px solid var(--line);color:var(--soft);font:500 10px var(--display);letter-spacing:.07em}.issue-foot b{color:var(--teal);font-size:17px}.editor-note{position:relative;padding:86px clamp(28px,3.4vw,58px) 50px;background:var(--teal);color:#f4f5ef}.editor-note .note-index{margin:0 0 37px;font:500 11px var(--display);letter-spacing:.14em}.editor-note h3{margin:0;font:500 23px/1.65 var(--serif);letter-spacing:.06em}.editor-note ol{margin:32px 0 20px;padding:0;list-style:none;border-top:1px solid rgba(255,255,255,.38)}.editor-note li{display:flex;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.25);font-size:12px}.editor-note li span{color:#aed0c8;font:500 12px var(--display)}.editor-note>p:last-child{margin:23px 0 0;color:#d8e8e1;font-size:11px;line-height:1.8}
-      .archive{min-height:700px;padding:25px max(52px,calc((100vw - 1364px)/2)) 82px max(104px,calc((100vw - 1364px)/2 + 66px));border-bottom:1px solid var(--line);background:#efede5}.archive-top{display:flex;justify-content:space-between;padding-bottom:23px;border-bottom:1px solid rgba(32,35,32,.45);color:var(--teal);font:500 10px var(--display);letter-spacing:.14em}.archive-intro{max-width:none;margin:69px 0 54px}.archive-intro h2{max-width:850px}.shelves{display:grid;grid-template-columns:repeat(4,minmax(170px,1fr));gap:22px}.shelf{min-width:0}.shelf-card{display:flex;flex-direction:column;justify-content:space-between;height:224px;padding:20px;border:1px solid rgba(32,35,32,.46);background:transparent;color:rgba(32,35,32,.58);transition:background .16s ease,transform .16s ease}.shelf-card:hover{background:rgba(255,255,255,.42);transform:translateY(-5px)}.shelf-card span{color:var(--teal);font:500 10px var(--display);letter-spacing:.14em}.shelf-card b{align-self:flex-start;padding:4px 7px;border:1px solid var(--line);color:var(--soft);font-size:10px;font-weight:500;letter-spacing:.08em}.shelf-card i{align-self:flex-end;color:var(--teal);font:500 30px var(--display);font-style:normal}.shelf>div+div{display:flex;justify-content:space-between;gap:8px;margin-top:12px}.shelf h3{margin:0;font:500 16px var(--serif)}.shelf p{margin:0;color:var(--soft);font-size:10px;line-height:1.6}.archive-caption{max-width:720px;margin:37px 0 0;color:var(--soft);font-size:11px;line-height:1.9}
-      .news{display:grid;grid-template-columns:61px minmax(250px,.8fr) minmax(0,1.45fr);min-height:500px;border-bottom:1px solid var(--line)}.news-head{padding:87px 40px 55px;border-right:1px solid var(--line)}.news-list{padding:81px min(6vw,100px)}.news-empty-intro{display:flex;gap:18px;align-items:center;padding-bottom:41px;border-bottom:1px solid var(--ink);color:var(--teal)}.news-icon{font:500 33px var(--display)}.news-empty-intro p{margin:0;color:var(--ink);font:500 19px/1.55 var(--serif)}.news-empty-intro strong{color:var(--teal);font-weight:500}.news-row{display:grid;grid-template-columns:minmax(140px,1fr) minmax(130px,.9fr) auto;gap:18px;align-items:center;min-height:67px;border-bottom:1px solid var(--line)}.news-row span{font:500 15px var(--serif)}.news-row i{color:var(--soft);font-size:11px;font-style:normal}.news-row b{color:var(--teal);font-size:19px;font-weight:400}
-      .about{display:grid;grid-template-columns:61px minmax(0,1fr) 120px;min-height:610px;border-bottom:1px solid var(--line)}.about-mark{display:flex;justify-content:center;padding-top:28px;border-right:1px solid var(--line)}.about-mark img{width:28px;height:28px}.about-copy{align-self:center;max-width:none;padding:82px clamp(58px,7vw,116px)}.about-copy>p:nth-of-type(2){max-width:720px;margin:31px 0 0;font:400 14px/2.1 var(--serif);letter-spacing:.06em}.about-small{padding-top:19px;border-top:1px solid var(--line);color:var(--soft);font:11px/1.8 var(--sans)!important}.about-rule{display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:29px 0;border-left:1px solid var(--line);color:var(--teal);font:500 10px var(--display);letter-spacing:.14em}.about-rule span{writing-mode:vertical-rl}.about-rule i{font-size:32px;font-style:normal}
-      .contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(520px,1fr);min-height:555px;background:var(--ink);color:#f7f5ee}.contact-copy{padding:84px max(58px,calc((100vw - 1364px)/2 + 82px));padding-right:min(10vw,176px)}.contact .eyebrow{color:#afd3ca}.contact h2{font-size:clamp(42px,4.6vw,67px)}.contact-copy>p:not(.eyebrow):not(.contact-note){max-width:510px;margin:29px 0 0;color:#d2d5ce;font:400 14px/2 var(--serif);letter-spacing:.05em}.contact-button{display:inline-flex;gap:11px;align-items:center;margin-top:34px;padding:15px 18px;border:0;background:#f4f4ee;color:var(--ink);font:400 12px var(--sans)}.contact-note{margin:14px 0 0;color:#9da49b;font-size:10px}.contact-photo{position:relative;overflow:hidden}.contact-photo img{width:100%;height:100%;min-height:555px;object-fit:cover;opacity:.78;filter:saturate(.58)}.contact-photo span{position:absolute;right:24px;bottom:21px;color:#f7f5ee;font:500 10px var(--display);letter-spacing:.15em}.footer{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;min-height:156px;padding:34px max(38px,var(--gutter));background:var(--paper)}.footer .brand{font-size:31px}.footer p{margin:7px 0 0 41px;color:var(--soft);font:500 10px var(--display);letter-spacing:.12em}.footer-info{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:9px 23px;color:var(--soft);font-size:10px}.footer-info a{color:var(--teal)}
-      @media(prefers-reduced-motion:no-preference){.hero-copy,.hero-art,.latest-main,.editor-note{animation:rise .5s cubic-bezier(.23,1,.32,1) both}.hero-art{animation-delay:.08s}.editor-note{animation-delay:.1s}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}}@media(max-width:1100px){.header-inner{padding:0 24px}.nav{gap:14px}.hero{padding:67px 28px 67px 86px;gap:36px}.latest{grid-template-columns:61px minmax(0,1fr)}.editor-note{grid-column:2;border-top:1px solid var(--line)}.archive{padding-right:40px;padding-left:86px}.shelves{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.shelf-card{height:202px}.about{grid-template-columns:61px minmax(0,1fr)}.about-rule{display:none}.about-copy{padding:76px 74px}.contact{grid-template-columns:1fr}.contact-copy{padding:72px 86px}.contact-photo{height:485px}.contact-photo img{min-height:485px}.footer{padding:34px 28px}}@media(max-width:820px){.archive{padding-right:32px;padding-left:48px}.shelves{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}.shelf-card{height:210px}.about-copy{padding:66px 50px}.contact-copy{padding:62px 50px}.contact-photo{height:440px}.contact-photo img{min-height:440px}}@media(max-width:720px){.site{border:0}.preview-ribbon{padding:9px 17px}.preview-ribbon span:last-child{display:none}.header-inner{display:flex;justify-content:center;min-height:67px;padding:0 19px}.parent-link,.nav{display:none}.brand{font-size:28px}.brand img{width:27px;height:27px}.hero{grid-template-columns:1fr;gap:42px;min-height:0;padding:57px 24px 45px 47px}.spine{width:32px;padding:17px 10px}.spine i{font-size:18px}.spine span{font-size:7px}.hero h1{font-size:95px}.hero-deck{margin:25px 0;font-size:17px}.hero-art{width:min(80%,340px);padding:9px}.image-index{top:-19px;left:-24px}.latest{grid-template-columns:32px minmax(0,1fr)}.section-index{padding:18px 0}.section-index b{font-size:17px}.latest-main{padding:53px 23px 55px}.latest-heading{display:block;margin-bottom:35px}h2{font-size:36px}.issue-empty{grid-template-columns:35px 1fr;min-height:330px}.issue-spine{padding:15px 10px;font-size:9px}.issue-body{padding:29px 23px 54px}.issue-body h3{font-size:21px}.issue-foot{left:35px;padding:0 11px;font-size:8px}.editor-note{padding:50px 24px 42px}.archive{min-height:0;padding:20px 22px 51px 48px}.archive-intro{margin:52px 0 34px}.shelves{gap:23px 12px}.shelf-card{height:178px;padding:14px}.shelf>div+div{display:block}.shelf p{margin-top:5px}.news{grid-template-columns:32px minmax(0,1fr)}.news-head{grid-column:2;padding:53px 23px 23px;border-right:0}.news-list{grid-column:2;padding:10px 23px 54px}.news-row{grid-template-columns:1fr auto;gap:7px;padding:13px 0}.news-row i{grid-row:2}.news-row b{grid-row:1/3;grid-column:2}.about{grid-template-columns:32px minmax(0,1fr);min-height:0}.about-mark{padding-top:17px}.about-mark img{width:20px;height:20px}.about-copy{padding:60px 28px}.about-copy>p:nth-of-type(2){max-width:none;margin-top:24px;font-size:13px}.contact{grid-template-columns:1fr}.contact-copy{padding:60px 28px 49px 48px}.contact-photo{height:340px}.contact-photo img{min-height:340px}.footer{display:block;min-height:0;padding:31px 23px}.footer-info{justify-content:flex-start;margin-top:27px}}@media(max-width:520px){.archive{padding-right:22px;padding-left:42px}.shelves{grid-template-columns:1fr;gap:20px}.shelf-card{height:188px}.contact-copy{padding-right:24px;padding-left:42px}}
-      /* 余白の書架: 指定プレビューに合わせ、棚は横一列に端正に並べ、問い合わせは二行見出しを守る。 */
-      /* 版面の外余白は .site の実幅(最大1440px)を基準に算出する。100vw基準だと max-width を超えた分がすべて
-         内側のpaddingに化けて、広い画面ほど棚と問い合わせ文が潰れる（2560pxで本文幅31pxまで縮む）。 */
-      :root{--gutter:calc((min(100vw,1440px) - 1364px)/2)}
-      .archive{min-height:650px;padding:25px max(38px,var(--gutter)) 77px max(104px,calc(var(--gutter) + 66px))}
-      .archive-intro{max-width:660px}
-      .archive-intro h2{max-width:none}
-      .shelves{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-      .shelf-card{height:192px;padding:18px}
-      .shelf-card i{font-size:27px}
-      .shelf h3{font-size:15px}
-      .archive-caption{max-width:450px;margin-top:35px}
-      .contact{grid-template-columns:minmax(0,1.1fr) minmax(540px,.9fr)}
-      .contact-copy{padding:84px clamp(48px,5vw,88px) 84px max(58px,calc(var(--gutter) + 66px))}
-      .contact h2{white-space:normal;text-wrap:balance}
-      .contact-copy>p:not(.eyebrow):not(.contact-note){max-width:560px}
-      @media(max-width:1100px){.archive{padding-right:36px;padding-left:86px}.shelves{grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.shelf-card{height:192px}.contact{grid-template-columns:1fr}.contact-copy{padding:72px 86px}.contact-photo{height:485px}.contact-photo img{min-height:485px}}
-      @media(max-width:820px){.archive{padding-right:28px;padding-left:48px}.shelves{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 18px}.shelf-card{height:182px}}
-      @media(max-width:720px){.contact-copy{padding-right:28px;padding-left:48px}}
-</style>
+      /* Style: Figures「余白の書架」— 深碧の罫線、紙の余白、二面の誌面で構成する文芸誌サイト。 */
+      :root {
+        --ink: #202420;
+        --muted: #666a63;
+        --paper: #f7f5ef;
+        --paper-deep: #efede5;
+        --line: #cacbc1;
+        --teal: #1e5c5a;
+        --teal-pale: #dce9e3;
+        --serif: "Noto Serif JP", serif;
+        --sans: "Noto Sans JP", sans-serif;
+        --display: "Cormorant Garamond", "Noto Serif JP", serif;
+        /* max-width: 1440px の .site 内では、余白計算も実効幅を基準にする。 */
+        --gutter: calc((min(100vw, 1440px) - 1364px) / 2);
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; background: var(--paper); }
+      body { min-width: 320px; margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+      a { color: inherit; text-decoration: none; }
+      button, input, select, textarea { font: inherit; }
+      :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+      .site { max-width: 1440px; margin: 0 auto; overflow: hidden; border-inline: 1px solid var(--line); }
+      .preview-ribbon { display: flex; justify-content: space-between; gap: 18px; padding: 9px 38px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 9px; letter-spacing: .08em; }
+      .preview-ribbon b { color: var(--teal); font-weight: 600; }
+      .site-header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--line); background: rgba(247,245,239,.94); backdrop-filter: blur(14px); }
+      .header-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 74px; padding: 0 38px; }
+      .parent-link { justify-self: start; color: var(--muted); font-size: 10px; letter-spacing: .08em; }
+      .brand { display: inline-flex; gap: 10px; align-items: center; font: 600 32px/1 var(--display); letter-spacing: -.04em; }
+      .brand img { width: 30px; height: 30px; object-fit: contain; }
+      .nav { display: flex; justify-self: end; gap: 22px; }
+      .nav a { position: relative; padding: 7px 0; color: #494c47; font-size: 11px; letter-spacing: .06em; }
+      .nav a::after { position: absolute; right: 0; bottom: 1px; left: 0; height: 1px; transform: scaleX(0); transform-origin: left; background: var(--teal); content: ""; transition: transform .18s cubic-bezier(.23,1,.32,1); }
+      .nav a:hover::after { transform: scaleX(1); }
+
+      .spine { display: flex; flex-direction: column; justify-content: space-between; width: 61px; padding: 25px 22px; border-right: 1px solid var(--line); color: var(--teal); }
+      .spine span { font-size: 9px; letter-spacing: .16em; writing-mode: vertical-rl; }
+      .spine i { font: 500 22px var(--display); font-style: normal; }
+      .hero { position: relative; display: grid; grid-template-columns: 61px minmax(0, 1.08fr) minmax(340px, .92fr); min-height: 615px; border-bottom: 1px solid var(--line); }
+      .hero-copy { align-self: center; padding: 82px clamp(42px,6vw,104px) 84px; }
+      .eyebrow { display: flex; gap: 9px; align-items: center; margin: 0 0 16px; color: var(--teal); font-size: 11px; font-weight: 600; letter-spacing: .16em; }
+      .eyebrow::before { display: block; width: 22px; height: 1px; background: currentColor; content: ""; }
+      .hero h1 { margin: 0; font: 600 clamp(88px,12vw,168px)/.74 var(--display); letter-spacing: -.065em; }
+      .hero .subtitle { margin: 14px 0 34px; color: var(--teal); font: 500 clamp(17px,2vw,25px)/1 var(--display); letter-spacing: .13em; }
+      .history { max-width: 590px; border-top: 1px solid var(--ink); }
+      .history-row { display: grid; grid-template-columns: 92px 1fr; gap: 18px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 12px; line-height: 1.85; }
+      .history-row b { color: var(--teal); font: 500 12px var(--display); letter-spacing: .1em; }
+      .history-row ul { display: flex; flex-wrap: wrap; gap: 4px 17px; margin: 0; padding: 0; list-style: none; }
+      .history-row li::before { color: var(--teal); content: "・"; }
+      .hero-intro { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: 80px max(38px,var(--gutter)) 60px 43px; border-left: 1px solid var(--line); background: var(--teal); color: #f6f7f1; }
+      .hero-intro .kicker { margin: 0 0 21px; color: #afd2c7; font: 500 10px var(--display); letter-spacing: .16em; }
+      .hero-intro h2 { max-width: 310px; margin: 0; font: 500 clamp(30px,3vw,45px)/1.35 var(--serif); letter-spacing: -.07em; }
+      .intro-note { margin: 18px 0 29px; color: #dbe9e4; font-size: 11px; line-height: 1.9; }
+      .member-list { margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.36); list-style: none; }
+      .member-list li { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.26); }
+      .member-list span { font: 500 16px var(--serif); }
+      .member-list em { color: #afd2c7; font: 500 10px var(--display); letter-spacing: .12em; font-style: normal; }
+      .entry-placeholder { display: block; margin-top: 24px; color: #dbe9e4; font-size: 11px; line-height: 1.85; }
+
+      .section-head { display: flex; justify-content: space-between; gap: 24px; align-items: flex-end; padding-bottom: 23px; border-bottom: 1px solid var(--ink); }
+      .section-code { color: var(--teal); font: 500 11px var(--display); letter-spacing: .17em; }
+      h2 { margin: 0; font: 500 clamp(38px,4.1vw,60px)/1.28 var(--serif); letter-spacing: -.07em; }
+      h2 em { color: var(--teal); font-style: normal; }
+      .latest { display: grid; grid-template-columns: 61px minmax(0,1fr); border-bottom: 1px solid var(--line); }
+      .section-index { display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 24px 0; border-right: 1px solid var(--line); color: var(--teal); }
+      .section-index b { font: 500 23px var(--display); }
+      .section-index span { font-size: 9px; letter-spacing: .16em; writing-mode: vertical-rl; }
+      .latest-inner { padding: 74px max(38px,var(--gutter)) 80px max(104px,calc(var(--gutter) + 66px)); }
+      .issue-meta { margin: 11px 0 0; color: var(--muted); font: 500 12px var(--display); letter-spacing: .08em; }
+      .spread { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; margin-top: 44px; }
+      .folio { min-width: 0; border: 1px solid var(--ink); background: #fffefa; }
+      .folio-top { display: flex; justify-content: space-between; padding: 11px 15px; border-bottom: 1px solid var(--line); color: var(--teal); font: 500 10px var(--display); letter-spacing: .14em; }
+      .folio img { display: block; width: 100%; aspect-ratio: .707 / 1; object-fit: cover; object-position: top; background: #eee; }
+      .latest-actions { display: flex; flex-wrap: wrap; gap: 18px 31px; align-items: center; margin-top: 27px; }
+      .download-link { display: inline-flex; gap: 9px; align-items: center; padding: 10px 0 8px; border-bottom: 1px solid var(--ink); font-size: 12px; transition: color .18s ease, transform .18s ease; }
+      .download-link:hover { color: var(--teal); transform: translateX(3px); }
+      .buy-note { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+      .buy-note a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+
+      .archive { padding: 25px max(38px,var(--gutter)) 84px max(104px,calc(var(--gutter) + 66px)); border-bottom: 1px solid var(--line); background: var(--paper-deep); }
+      .archive-top { display: flex; justify-content: space-between; padding-bottom: 23px; border-bottom: 1px solid rgba(32,36,32,.6); color: var(--teal); font: 500 10px var(--display); letter-spacing: .15em; }
+      .archive h2 { margin: 66px 0 43px; }
+      .issues { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px 24px; }
+      .issue-card { min-width: 0; }
+      .issue-card .spread { gap: 10px; margin: 0; }
+      .issue-card .folio { border-color: rgba(32,36,32,.58); }
+      .issue-card .folio-top { padding: 9px 12px; }
+      .issue-card .folio img { aspect-ratio: .707 / 1; }
+      .issue-card-footer { display: flex; justify-content: space-between; gap: 15px; align-items: center; margin-top: 12px; }
+      .issue-card h3 { margin: 0; font: 500 18px var(--serif); letter-spacing: .04em; }
+      .issue-card p { margin: 3px 0 0; color: var(--muted); font: 500 11px var(--display); letter-spacing: .08em; }
+      .issue-card .download-link { padding-top: 3px; font-size: 11px; white-space: nowrap; }
+
+      .contact { display: grid; grid-template-columns: 61px minmax(0,1.05fr) minmax(390px,.95fr); border-bottom: 1px solid var(--line); }
+      .contact-copy { padding: 79px clamp(44px,5vw,84px) 80px max(104px,calc(var(--gutter) + 66px)); }
+      .contact-copy .section-code { display: block; margin-bottom: 18px; }
+      .contact-copy h2 { white-space: normal; }
+      .contact-copy h2 br { display: block; }
+      .contact-copy > p { max-width: 565px; margin: 27px 0 0; color: var(--muted); font: 400 14px/2 var(--serif); letter-spacing: .04em; }
+      .form-panel { padding: 77px max(38px,var(--gutter)) 79px 45px; border-left: 1px solid var(--line); background: #f3f1ea; }
+      .form-panel h3 { margin: 0 0 8px; color: var(--teal); font: 500 16px var(--serif); letter-spacing: .08em; }
+      .form-panel .form-lead { margin: 0 0 25px; color: var(--muted); font-size: 11px; line-height: 1.8; }
+      .form-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+      .field { display: grid; gap: 7px; }
+      .field.full { grid-column: 1 / -1; }
+      .field label { color: var(--teal); font-size: 10px; font-weight: 600; letter-spacing: .12em; }
+      .field label span { color: var(--muted); font-weight: 400; }
+      input, select, textarea { width: 100%; border: 1px solid var(--line); border-radius: 0; background: rgba(255,255,255,.7); color: var(--ink); }
+      input, select { height: 40px; padding: 0 11px; }
+      textarea { min-height: 112px; padding: 11px; resize: vertical; }
+      .form-confirm { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: end; margin-top: 16px; }
+      .form-confirm input { max-width: 116px; }
+      .consent { display: flex; gap: 8px; align-items: flex-start; margin: 18px 0 0; color: var(--muted); font-size: 10px; line-height: 1.7; }
+      .consent input { width: 14px; height: 14px; margin: 2px 0 0; }
+      .send-button { width: 100%; margin-top: 20px; padding: 13px 15px; border: 1px solid var(--teal); border-radius: 0; background: var(--teal); color: #f8f8f2; font-size: 12px; letter-spacing: .12em; transition: background .16s ease, color .16s ease, transform .16s ease; }
+      .send-button:hover { transform: translateY(-2px); background: transparent; color: var(--teal); }
+      .form-status { min-height: 18px; margin: 12px 0 0; color: var(--teal); font-size: 11px; line-height: 1.7; }
+
+      footer { display: flex; justify-content: space-between; gap: 24px; align-items: end; padding: 42px max(38px,var(--gutter)) 48px max(104px,calc(var(--gutter) + 66px)); }
+      .footer-brand { display: grid; gap: 7px; }
+      .footer-brand a { display: inline-flex; gap: 10px; align-items: center; font: 600 30px/1 var(--display); letter-spacing: -.04em; }
+      .footer-brand img { width: 28px; height: 28px; }
+      .footer-brand p { margin: 0; color: var(--teal); font: 500 11px var(--display); letter-spacing: .14em; }
+      .footer-meta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 14px 24px; max-width: 610px; color: var(--muted); font-size: 10px; line-height: 1.8; }
+      .footer-meta a { color: var(--teal); }
+
+      @media (max-width: 960px) {
+        .site { border-inline: 0; }
+        .preview-ribbon, .header-inner { padding-inline: 24px; }
+        .hero { grid-template-columns: 53px minmax(0,1fr); }
+        .hero-intro { grid-column: 2; padding: 48px max(26px,var(--gutter)) 52px 42px; border-top: 1px solid var(--line); }
+        .spine { width: 53px; padding-inline: 18px; }
+        .latest-inner, .archive { padding-left: max(72px,calc(var(--gutter) + 19px)); }
+        .contact { grid-template-columns: 53px minmax(0,1fr); }
+        .contact .section-index { grid-row: span 2; }
+        .contact-copy { padding-left: max(72px,calc(var(--gutter) + 19px)); }
+        .form-panel { grid-column: 2; padding: 54px max(26px,var(--gutter)) 60px max(72px,calc(var(--gutter) + 19px)); border-top: 1px solid var(--line); border-left: 0; }
+        footer { padding-left: max(72px,calc(var(--gutter) + 19px)); }
+      }
+      @media (max-width: 720px) {
+        .preview-ribbon span:last-child, .parent-link { display: none; }
+        .header-inner { grid-template-columns: 1fr auto; min-height: 62px; }
+        .brand { font-size: 29px; }
+        .nav { gap: 13px; overflow: auto; max-width: 70vw; }
+        .nav a { font-size: 10px; white-space: nowrap; }
+        .hero { grid-template-columns: 40px minmax(0,1fr); }
+        .spine { width: 40px; padding: 20px 12px; }
+        .hero-copy { padding: 58px 27px 62px; }
+        .hero h1 { font-size: clamp(76px,24vw,122px); }
+        .hero .subtitle { font-size: 17px; }
+        .history-row { grid-template-columns: 77px 1fr; gap: 12px; font-size: 11px; }
+        .hero-intro { padding: 39px 27px 43px; }
+        .latest { grid-template-columns: 40px minmax(0,1fr); }
+        .section-index { padding-block: 18px; }
+        .latest-inner { padding: 52px 25px 58px; }
+        .section-head { display: block; }
+        .issue-meta { margin-top: 13px; }
+        .spread, .issues { grid-template-columns: 1fr; }
+        .spread { gap: 14px; margin-top: 31px; }
+        .archive { padding: 20px 25px 56px; }
+        .archive h2 { margin: 49px 0 31px; }
+        .issues { gap: 30px; }
+        .contact { grid-template-columns: 40px minmax(0,1fr); }
+        .contact-copy { padding: 56px 25px 54px; }
+        .contact-copy h2 { font-size: clamp(34px,10.5vw,49px); }
+        .form-panel { padding: 48px 25px 55px; }
+        .form-grid { grid-template-columns: 1fr; }
+        .field.full { grid-column: auto; }
+        footer { display: grid; padding: 38px 25px 44px; }
+        .footer-meta { justify-content: start; }
+      }
+    </style>
   </head>
   <body>
-    <div class="site" id="top">
-      <div class="preview-ribbon"><span><b>FIGURES / SITE IMAGE</b>　素材未提供時の公開構成を確認するためのHTMLプレビューです。</span><span>REVIEW EDITION / 2026</span></div>
-      <header class="site-header"><div class="header-inner"><a class="parent-link" href="https://digital-research.co.jp/" target="_blank" rel="noreferrer">Digital Research ↗</a><a class="brand" href="#top" aria-label="Figures トップへ"><img src="figures-logo-mark.png" alt="Figuresのシンボルマーク" /><span>Figures</span></a><nav class="nav" aria-label="Figures 内のページ"><a href="#latest">最新号</a><a href="#archive">バックナンバー</a><a href="#news">お知らせ</a><a href="#about">Figuresとは</a><a href="#contact">お問い合わせ</a></nav></div></header>
-      <main>
-        <section class="hero"><div class="spine"><span>FIGURES / LITERARY JOURNAL</span><i>01</i></div><div class="hero-copy"><p class="eyebrow">文芸誌</p><h1>Figures</h1><p class="hero-deck">言葉のかたちを丁寧に蓄積し、<br />次の読者へ手渡すための文芸誌。</p><div class="status"><span class="status-dot"></span>公開準備中 <em>CONTENTS IN PREPARATION</em></div><a class="text-link" href="#latest">公開予定の構成を見る　→</a></div><div class="hero-art"><span class="image-index">— 01</span><img src="figures-hero-object.jpg" alt="白い空間に置かれた、Figuresを象徴する紙のオブジェ" /><p>FORM / SILENCE / TRACE</p></div></section>
-        <section class="latest" id="latest"><aside class="section-index"><b>01</b><span>LATEST ISSUE</span></aside><div class="latest-main"><div class="latest-heading"><p class="eyebrow">最新号</p><h2>次の一冊を、<br /><em>静かに迎える。</em></h2></div><article class="issue-empty"><div class="issue-spine">FIGURES　—　NEW ISSUE</div><div class="issue-body"><span class="book-symbol">▱</span><p class="issue-tag">掲載準備中</p><h3>最新号の情報を<br />ここに掲載します。</h3><p>表紙、号名、発刊日、頒価、紹介文、目次を登録すると、最新号として自動表示されます。</p></div><div class="issue-foot"><span>Issue number</span><b>—</b><span>Publication date</span><b>—</b></div></article></div><aside class="editor-note"><p class="note-index">FOR EDITORS</p><h3>更新に必要なのは<br />六つの入力項目です。</h3><ol><li><span>01</span>表紙画像</li><li><span>02</span>号名・号数</li><li><span>03</span>発刊日・頒価</li><li><span>04</span>紹介文</li><li><span>05</span>目次</li><li><span>06</span>購入案内</li></ol><p>入力後は「プレビュー」→「公開」の二段階で確認できます。</p></aside></section>
-        <section class="archive" id="archive"><div class="archive-top"><span>02 / ARCHIVE</span><span>BACK NUMBERS</span></div><div class="archive-intro"><p class="eyebrow">バックナンバー</p><h2>時間をさかのぼり、<br />言葉に出会う。</h2></div><div class="shelves"><article class="shelf"><div class="shelf-card"><span>SHELF　01</span><b>挿入待ち</b><i>01</i></div><div><h3>第1号</h3><p>刊行情報を登録後に表示</p></div></article><article class="shelf"><div class="shelf-card"><span>SHELF　02</span><b>挿入待ち</b><i>02</i></div><div><h3>第2号</h3><p>刊行情報を登録後に表示</p></div></article><article class="shelf"><div class="shelf-card"><span>SHELF　03</span><b>挿入待ち</b><i>03</i></div><div><h3>第3号</h3><p>刊行情報を登録後に表示</p></div></article><article class="shelf"><div class="shelf-card"><span>SHELF　04</span><b>挿入待ち</b><i>04</i></div><div><h3>第4号</h3><p>刊行情報を登録後に表示</p></div></article></div><p class="archive-caption">一冊ごとに表紙、発刊情報、目次、購入案内を追加できます。初期公開時は、登録済みの号だけがこの棚に並びます。</p></section>
-        <section class="news" id="news"><aside class="section-index"><b>03</b><span>NEWS</span></aside><div class="news-head"><p class="eyebrow">お知らせ</p><h2>編集部からの<br />小さな便り。</h2></div><div class="news-list"><div class="news-empty-intro"><span class="news-icon">◫</span><p>お知らせは<br /><strong>まだありません。</strong></p></div><div class="news-row"><span>発刊のお知らせ</span><i>新号の公開時に記録します</i><b>→</b></div><div class="news-row"><span>会合・催しのご案内</span><i>日程確定後に記録します</i><b>→</b></div><div class="news-row"><span>編集部より</span><i>必要な折に記録します</i><b>→</b></div></div></section>
-        <section class="about" id="about"><aside class="about-mark"><img src="figures-logo-mark.png" alt="" /></aside><div class="about-copy"><p class="eyebrow">Figuresとは</p><h2>まだ余白の頁に、<br /><em>これからの言葉を。</em></h2><p>Figuresは、作品と批評を丁寧に読み、言葉の新しい輪郭を見つめるための文芸誌です。このページには、創刊の趣旨、編集方針、発行情報を掲載します。</p><p class="about-small">「Figuresとは」は管理画面の固定ページから、いつでも書き換えられます。</p></div><aside class="about-rule"><span>FIGURES</span><i>—</i><span>ABOUT THE JOURNAL</span></aside></section>
-        <section class="contact" id="contact"><div class="contact-copy"><p class="eyebrow">お問い合わせ</p><h2>編集部へ<br />おたずねください。</h2><p>冊子の購入、会員・寄稿について、掲載内容に関するお問い合わせは、専用フォームで受け付けます。</p><span class="contact-button">お問い合わせ先を準備中</span><p class="contact-note">公開時に受信先メールアドレスと個人情報取扱いを設定します。</p></div><div class="contact-photo"><img src="figures-contact-stilllife.jpg" alt="紙のオブジェを配した静かな写真" /><span>CONTACT / 04</span></div></section>
+    <div class="site">
+      <div class="preview-ribbon"><span><b>FIGURES / SITE IMAGE</b>　既刊PDFを反映した公式サイト構成のHTMLプレビューです。</span><span>REVIEW EDITION / 2026.09</span></div>
+      <header class="site-header">
+        <div class="header-inner">
+          <a class="parent-link" href="https://digital-research.co.jp/" target="_blank" rel="noreferrer">DIGITAL RESEARCH ↗</a>
+          <a class="brand" href="#top" aria-label="Figures トップへ"><img src="figures-logo-mark.png" alt="" />Figures</a>
+          <nav class="nav" aria-label="ページ内ナビゲーション"><a href="#latest">最新号</a><a href="#archive">バックナンバー</a><a href="#introduction">Figuresの紹介</a><a href="#contact">通信欄</a></nav>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <aside class="spine" aria-hidden="true"><span>FIGURES / REVUE LITTÉRAIRE</span><i>01</i></aside>
+          <div class="hero-copy">
+            <p class="eyebrow">文芸誌</p>
+            <h1 id="hero-title">Figures</h1>
+            <p class="subtitle">revue littéraire</p>
+            <div class="history" aria-label="Figuresの沿革と発行情報">
+              <div class="history-row"><b>沿革</b><span>2025-4　Figures創刊</span></div>
+              <div class="history-row"><b>同人</b><ul><li>角谷 有一</li><li>遠藤 雅樹</li></ul></div>
+              <div class="history-row"><b>発行情報</b><span>編集発行人：遠藤 雅樹<br />発行所：（有）デジタルリサーチ<br />印刷：プリテックコーポレーション</span></div>
+            </div>
+          </div>
+          <aside class="hero-intro" id="introduction" aria-labelledby="introduction-title">
+            <p class="kicker">FIGURES / INTRODUCTION</p>
+            <h2 id="introduction-title">Figuresの紹介<br />ブログ投稿一覧</h2>
+            <p class="intro-note">同人がそれぞれの紹介や文章を投稿し、誌面の外でも言葉を手渡すための記録です。</p>
+            <ul class="member-list" aria-label="投稿者">
+              <li><span>角谷 有一</span><em>MEMBER POSTS</em></li>
+              <li><span>遠藤 雅樹</span><em>MEMBER POSTS</em></li>
+            </ul>
+            <small class="entry-placeholder">投稿は準備中です。WordPressでは、同人ごとに投稿者を分けて登録・公開できます。</small>
+          </aside>
+        </section>
+
+        <section class="latest" id="latest" aria-labelledby="latest-title">
+          <aside class="section-index" aria-hidden="true"><b>02</b><span>LATEST ISSUE</span></aside>
+          <div class="latest-inner">
+            <div class="section-head"><div><p class="section-code">LATEST ISSUE / NO.4</p><h2 id="latest-title">最新号</h2></div><p class="issue-meta">2026年8月号　No.4</p></div>
+            <div class="spread" aria-label="第4号 表紙と目次">
+              <article class="folio"><div class="folio-top"><span>NO.4 / COVER</span><span>表紙</span></div><img src="figures-vol4-cover.png" alt="Figures 第4号の表紙" /></article>
+              <article class="folio"><div class="folio-top"><span>NO.4 / CONTENTS</span><span>目次</span></div><img src="figures-vol4-toc.png" alt="Figures 第4号の目次" /></article>
+            </div>
+            <div class="latest-actions"><a class="download-link" href="Figures_vol4.pdf" download>PDFをダウンロード　→</a><p class="buy-note">冊子ご希望の場合は<a href="#contact">通信欄</a>からお申し込みください。</p></div>
+          </div>
+        </section>
+
+        <section class="archive" id="archive" aria-labelledby="archive-title">
+          <div class="archive-top"><span>03 / ARCHIVE</span><span>BACK NUMBERS</span></div>
+          <h2 id="archive-title">バックナンバー</h2>
+          <div class="issues">
+            <article class="issue-card"><div class="spread"><div class="folio"><div class="folio-top"><span>NO.1 / COVER</span><span>表紙</span></div><img src="figures-vol1-cover.png" alt="Figures 第1号の表紙" /></div><div class="folio"><div class="folio-top"><span>NO.1 / CONTENTS</span><span>目次</span></div><img src="figures-vol1-toc.png" alt="Figures 第1号の目次" /></div></div><div class="issue-card-footer"><div><h3>第1号</h3><p>2025年4月号</p></div><a class="download-link" href="Figures_vol1.pdf" download>ダウンロード　→</a></div></article>
+            <article class="issue-card"><div class="spread"><div class="folio"><div class="folio-top"><span>NO.2 / COVER</span><span>表紙</span></div><img src="figures-vol2-cover.png" alt="Figures 第2号の表紙" /></div><div class="folio"><div class="folio-top"><span>NO.2 / CONTENTS</span><span>目次</span></div><img src="figures-vol2-toc.png" alt="Figures 第2号の目次" /></div></div><div class="issue-card-footer"><div><h3>第2号</h3><p>2025年8月号</p></div><a class="download-link" href="Figures_vol2.pdf" download>ダウンロード　→</a></div></article>
+            <article class="issue-card"><div class="spread"><div class="folio"><div class="folio-top"><span>NO.3 / COVER</span><span>表紙</span></div><img src="figures-vol3-cover.png" alt="Figures 第3号の表紙" /></div><div class="folio"><div class="folio-top"><span>NO.3 / CONTENTS</span><span>目次</span></div><img src="figures-vol3-toc.png" alt="Figures 第3号の目次" /></div></div><div class="issue-card-footer"><div><h3>第3号</h3><p>2026年2月号</p></div><a class="download-link" href="Figures_vol3.pdf" download>ダウンロード　→</a></div></article>
+          </div>
+        </section>
+
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+          <aside class="section-index" aria-hidden="true"><b>04</b><span>MESSAGE</span></aside>
+          <div class="contact-copy"><span class="section-code">FIGURES / MESSAGE</span><h2 id="contact-title">編集部へ<br />おたずねください。</h2><p>冊子のご希望、同人・寄稿について、掲載内容に関するお問い合わせは、通信欄からお寄せください。内容は編集部で確認します。</p></div>
+          <form class="form-panel" id="message-form"><h3>通信欄</h3><p class="form-lead">北斗HPの問い合わせ構成に準じた入力項目です。</p><div class="form-grid"><div class="field"><label for="name">お名前 <span>（必須）</span></label><input id="name" name="name" required autocomplete="name" /></div><div class="field"><label for="email">E-mail <span>（必須）</span></label><input id="email" name="email" required type="email" autocomplete="email" /></div><div class="field"><label for="type">通信内容の種類</label><select id="type" name="type"><option>冊子の希望</option><option>同人・寄稿について</option><option>Figuresについて</option><option>その他</option></select></div><div class="field"><label for="subject">件名</label><input id="subject" name="subject" /></div><div class="field full"><label for="message">通信内容 <span>（必須）</span></label><textarea id="message" name="message" required></textarea></div></div><div class="form-confirm"><div class="field"><label for="check-word">確認のため「Figures」と入力してください。</label><input id="check-word" name="check-word" required /></div></div><label class="consent"><input type="checkbox" required />入力内容を編集部が確認することに同意します。</label><button class="send-button" type="submit">内容を確認して送信　→</button><p class="form-status" id="form-status" aria-live="polite"></p></form>
+        </section>
       </main>
-      <footer class="footer"><div><a class="brand" href="#top"><img src="figures-logo-mark.png" alt="Figuresのシンボルマーク" /><span>Figures</span></a><p>LITERARY JOURNAL</p></div><div class="footer-info"><span>© Figures</span><span>Published by Digital Research</span><a href="https://digital-research.co.jp/" target="_blank" rel="noreferrer">デジタルリサーチへ ↗</a></div></footer>
+
+      <footer><div class="footer-brand"><a href="#top"><img src="figures-logo-mark.png" alt="" />Figures</a><p>revue littéraire</p></div><div class="footer-meta"><span>© Figures</span><span>Published by Digital Research</span><a href="https://digital-research.co.jp/" target="_blank" rel="noreferrer">デジタルリサーチへ ↗</a></div></footer>
     </div>
+    <script>
+      document.getElementById("message-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const status = document.getElementById("form-status");
+        const word = document.getElementById("check-word").value.trim().toLowerCase();
+        if (word !== "figures") { status.textContent = "確認用語句として「Figures」を入力してください。"; return; }
+        status.textContent = "HTMLプレビューでは送信されません。WordPress公開時に編集部の受信先を設定します。";
+      });
+    </script>
   </body>
 </html>
