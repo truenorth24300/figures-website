@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Figures | 濃色比較</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      /* Style: Figures「余白の書架」— 淡い紙色を固定し、濃色だけを比較する。 */
+      :root { --paper:#f7f5ef; --ink:#202420; --muted:#666a63; --line:#cacbc1; --serif:"Noto Serif JP",serif; --sans:"Noto Sans JP",sans-serif; --display:"Cormorant Garamond","Noto Serif JP",serif; }
+      * { box-sizing:border-box; }
+      body { min-width:320px; margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); }
+      a { color:inherit; }
+      .sheet { max-width:1160px; min-height:100vh; margin:0 auto; padding:70px 56px 90px; border-inline:1px solid var(--line); }
+      .topline { display:flex; justify-content:space-between; gap:20px; padding-bottom:22px; border-bottom:1px solid var(--ink); color:var(--muted); font-size:10px; letter-spacing:.12em; }
+      h1 { margin:58px 0 14px; font:500 clamp(44px,6vw,78px)/.95 var(--display); letter-spacing:-.06em; }
+      .lead { max-width:630px; margin:0 0 48px; color:var(--muted); font:400 14px/2 var(--serif); }
+      .options { display:grid; gap:19px; }
+      .option { display:grid; grid-template-columns:156px 1fr; min-height:142px; border:1px solid var(--line); background:#fffefa; }
+      .sample { display:flex; align-items:flex-end; padding:22px; background:var(--tone); color:#fffefa; }
+      .sample span { font:500 38px/1 var(--serif); letter-spacing:-.06em; }
+      .content { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:22px; align-items:center; padding:24px 29px; }
+      .number { margin:0 0 7px; color:var(--tone); font:500 10px var(--display); letter-spacing:.15em; }
+      h2 { margin:0; font:500 25px/1.3 var(--serif); letter-spacing:-.05em; }
+      .detail { margin:7px 0 0; color:var(--muted); font-size:12px; line-height:1.8; }
+      code { align-self:start; padding:7px 9px; border:1px solid var(--line); color:var(--tone); font:500 12px var(--display); letter-spacing:.08em; }
+      .mini { display:flex; flex-direction:column; justify-content:space-between; width:178px; height:94px; padding:13px 14px; background:var(--tone); color:#fffefa; }
+      .mini strong { font:500 20px/1 var(--serif); letter-spacing:-.04em; }
+      .mini small { font:500 8px var(--display); letter-spacing:.14em; }
+      footer { display:flex; justify-content:space-between; gap:20px; margin-top:54px; color:var(--muted); font-size:10px; letter-spacing:.08em; }
+      @media (max-width:700px) { .sheet { padding:40px 22px 60px; border-inline:0; } .topline { display:grid; gap:8px; } h1 { margin-top:42px; } .option { grid-template-columns:1fr; } .sample { min-height:96px; } .content { grid-template-columns:1fr; padding:21px; } .mini { width:100%; } footer { display:grid; } }
+    </style>
+  </head>
+  <body>
+    <main class="sheet">
+      <div class="topline"><span>FIGURES / COLOR STUDY</span><a href="index.html">サイトイメージへ戻る　→</a></div>
+      <h1>濃色の比較</h1>
+      <p class="lead">背景は現行の淡い紙色 <strong>#F7F5EF</strong> のまま固定し、ブログ枠・罫線・ボタンに使う濃色だけを比較します。第4号表紙の陶磁器の緑、水色、藍色を基点にしています。</p>
+      <section class="options" aria-label="濃色の候補">
+        <article class="option" style="--tone:#1e5c5a"><div class="sample"><span>ブログ</span></div><div class="content"><div><p class="number">OPTION 01</p><h2>現行の深碧</h2><p class="detail">現在の緑系を保つ、落ち着いた青緑。現状から最も違和感なく切り替えられます。</p></div><code>#1E5C5A</code></div><div class="mini"><strong>Figures</strong><small>REVUE LITTÉRAIRE</small></div></article>
+        <article class="option" style="--tone:#176c5b"><div class="sample"><span>ブログ</span></div><div class="content"><div><p class="number">OPTION 02</p><h2>常盤緑</h2><p class="detail">第4号表紙の緑の陶片を深く落とした色。新鮮さを残しながら、紙面に馴染みます。</p></div><code>#176C5B</code></div><div class="mini"><strong>Figures</strong><small>REVUE LITTÉRAIRE</small></div></article>
+        <article class="option" style="--tone:#245b7a"><div class="sample"><span>ブログ</span></div><div class="content"><div><p class="number">OPTION 03</p><h2>陶磁藍</h2><p class="detail">水色の陶片と藍色の筆致を受けた青系。端正で知的な、少し涼やかな印象です。</p></div><code>#245B7A</code></div><div class="mini"><strong>Figures</strong><small>REVUE LITTÉRAIRE</small></div></article>
+        <article class="option" style="--tone:#17476c"><div class="sample"><span>ブログ</span></div><div class="content"><div><p class="number">OPTION 04</p><h2>呉須青</h2><p class="detail">染付の線を思わせる深い青。もっとも硬質で、白い文字を明瞭に見せます。</p></div><code>#17476C</code></div><div class="mini"><strong>Figures</strong><small>REVUE LITTÉRAIRE</small></div></article>
+        <article class="option" style="--tone:#6d3042"><div class="sample"><span>ブログ</span></div><div class="content"><div><p class="number">OPTION 05</p><h2>葡萄茶</h2><p class="detail">臙脂系の深い赤紫。文芸誌らしい温度と、他の候補とは異なる個性を加えます。</p></div><code>#6D3042</code></div><div class="mini"><strong>Figures</strong><small>REVUE LITTÉRAIRE</small></div></article>
+      </section>
+      <footer><span>FIGURES / REVIEW EDITION</span><span>背景色：#F7F5EF（現行を維持）</span></footer>
+    </main>
+  </body>
+</html>

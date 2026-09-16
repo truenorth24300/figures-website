@@ -46,7 +46,7 @@
       .spine { display: flex; flex-direction: column; justify-content: space-between; width: 61px; padding: 25px 22px; border-right: 1px solid var(--line); color: var(--teal); }
       .spine span { font-size: 9px; letter-spacing: .16em; writing-mode: vertical-rl; }
       .spine i { font: 500 22px var(--display); font-style: normal; }
-      .hero { position: relative; display: grid; grid-template-columns: 61px minmax(0, 1.08fr) minmax(340px, .92fr); min-height: 615px; border-bottom: 1px solid var(--line); }
+      .hero { position: relative; display: grid; grid-template-columns: 61px minmax(0, 1fr) minmax(280px, .34fr); min-height: 615px; border-bottom: 1px solid var(--line); }
       .hero-copy { align-self: center; padding: 82px clamp(42px,6vw,104px) 84px; }
       .eyebrow { display: flex; gap: 9px; align-items: center; margin: 0 0 16px; color: var(--teal); font-size: 11px; font-weight: 600; letter-spacing: .16em; }
       .eyebrow::before { display: block; width: 22px; height: 1px; background: currentColor; content: ""; }
@@ -57,18 +57,17 @@
       .history-row b { color: var(--teal); font: 500 12px var(--display); letter-spacing: .1em; }
       .history-row ul { display: flex; flex-wrap: wrap; gap: 4px 17px; margin: 0; padding: 0; list-style: none; }
       .history-row li::before { color: var(--teal); content: "・"; }
-      .hero-intro { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: 80px max(38px,var(--gutter)) 60px 43px; border-left: 1px solid var(--line); background: var(--teal); color: #f6f7f1; }
-      .hero-intro .blog-title { margin: 0 0 28px; color: #fffefa; font: 500 clamp(36px,3.7vw,52px)/1.1 var(--serif); letter-spacing: -.06em; }
-      .intro-note { margin: 18px 0 29px; color: #dbe9e4; font-size: 11px; line-height: 1.9; }
-      .member-list { margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.36); list-style: none; }
-      .member-list li { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.26); }
-      .member-list span { font: 500 16px var(--serif); }
-      .member-list em { color: #afd2c7; font: 500 10px var(--display); letter-spacing: .12em; font-style: normal; }
-      .entry-placeholder { display: block; margin-top: 24px; color: #dbe9e4; font-size: 11px; line-height: 1.85; }
+      .hero-intro { display: flex; flex-direction: column; justify-content: flex-start; min-width: 0; padding: 80px max(32px,var(--gutter)) 60px 34px; border-left: 1px solid var(--line); background: var(--teal); color: #f6f7f1; }
+      .hero-intro .blog-title { margin: 0; color: #fffefa; font: 500 clamp(34px,3.1vw,46px)/1.1 var(--serif); letter-spacing: -.06em; }
+      /* WordPressでは、日付とタイトルのみのブログ一覧をこの枠に表示する。 */
+      .blog-list { margin: 43px 0 0; padding: 0; border-top: 1px solid rgba(255,255,255,.36); list-style: none; }
+      .blog-list li { border-bottom: 1px solid rgba(255,255,255,.26); }
+      .blog-list a { display: grid; grid-template-columns: 76px 1fr; gap: 12px; padding: 12px 0; color: #f6f7f1; font-size: 12px; line-height: 1.55; }
+      .blog-list time { color: #afd2c7; font: 500 10px var(--display); letter-spacing: .08em; }
 
       .section-head { display: flex; justify-content: space-between; gap: 24px; align-items: flex-end; padding-bottom: 23px; border-bottom: 1px solid var(--ink); }
       .section-code { color: var(--teal); font: 500 11px var(--display); letter-spacing: .17em; }
-      h2 { margin: 0; font: 500 clamp(38px,4.1vw,60px)/1.28 var(--serif); letter-spacing: -.07em; }
+      h2 { margin: 0; font: 500 clamp(30px,3.1vw,44px)/1.28 var(--serif); letter-spacing: -.06em; }
       h2 em { color: var(--teal); font-style: normal; }
       .latest { display: grid; grid-template-columns: 61px minmax(0,1fr); border-bottom: 1px solid var(--line); }
       .section-index { display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 24px 0; border-right: 1px solid var(--line); color: var(--teal); }
@@ -103,7 +102,7 @@
       .contact { display: grid; grid-template-columns: 61px minmax(0,1.05fr) minmax(390px,.95fr); border-bottom: 1px solid var(--line); }
       .contact-copy { padding: 79px clamp(44px,5vw,84px) 80px max(104px,calc(var(--gutter) + 66px)); }
       .contact-copy .section-code { display: block; margin-bottom: 18px; }
-      .contact-copy .contact-title { margin: 0; color: var(--ink); font: 500 clamp(42px,4.5vw,64px)/1.15 var(--serif); letter-spacing: -.07em; }
+      .contact-copy .contact-title { margin: 0; color: var(--ink); font: 500 clamp(30px,3.1vw,44px)/1.2 var(--serif); letter-spacing: -.06em; }
       .contact-copy > p { max-width: 565px; margin: 27px 0 0; color: var(--muted); font: 400 14px/2 var(--serif); letter-spacing: .04em; }
       .form-panel { padding: 77px max(38px,var(--gutter)) 79px 45px; border-left: 1px solid var(--line); background: #f3f1ea; }
       .form-panel h3 { margin: 0 0 8px; color: var(--teal); font: 500 16px var(--serif); letter-spacing: .08em; }
@@ -118,8 +117,6 @@
       textarea { min-height: 112px; padding: 11px; resize: vertical; }
       .form-confirm { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: end; margin-top: 16px; }
       .form-confirm input { max-width: 116px; }
-      .consent { display: flex; gap: 8px; align-items: flex-start; margin: 18px 0 0; color: var(--muted); font-size: 10px; line-height: 1.7; }
-      .consent input { width: 14px; height: 14px; margin: 2px 0 0; }
       .send-button { width: 100%; margin-top: 20px; padding: 13px 15px; border: 1px solid var(--teal); border-radius: 0; background: var(--teal); color: #f8f8f2; font-size: 12px; letter-spacing: .12em; transition: background .16s ease, color .16s ease, transform .16s ease; }
       .send-button:hover { transform: translateY(-2px); background: transparent; color: var(--teal); }
       .form-status { min-height: 18px; margin: 12px 0 0; color: var(--teal); font-size: 11px; line-height: 1.7; }
@@ -170,7 +167,7 @@
         .issues { gap: 30px; }
         .contact { grid-template-columns: 40px minmax(0,1fr); }
         .contact-copy { padding: 56px 25px 54px; }
-        .contact-copy .contact-title { font-size: clamp(38px,11vw,50px); }
+        .contact-copy .contact-title { font-size: clamp(30px,9vw,42px); }
         .form-panel { padding: 48px 25px 55px; }
         .form-grid { grid-template-columns: 1fr; }
         .field.full { grid-column: auto; }
@@ -194,23 +191,17 @@
         <section class="hero" aria-labelledby="hero-title">
           <aside class="spine" aria-hidden="true"><span>FIGURES / REVUE LITTÉRAIRE</span><i>01</i></aside>
           <div class="hero-copy">
-            <p class="eyebrow">文芸誌</p>
             <h1 id="hero-title">Figures</h1>
             <p class="subtitle">revue littéraire</p>
             <div class="history" aria-label="Figuresの沿革と発行情報">
-              <div class="history-row"><b>沿革</b><span>2025-4　Figures創刊</span></div>
+              <div class="history-row"><b>沿革</b><span>2025年（令和8年）4月30日創刊</span></div>
               <div class="history-row"><b>同人</b><ul><li>角谷 有一</li><li>遠藤 雅樹</li></ul></div>
               <div class="history-row"><b>発行情報</b><span>編集発行人：遠藤 雅樹<br />発行所：（有）デジタルリサーチ<br />印刷：東海共同印刷</span></div>
             </div>
           </div>
           <aside class="hero-intro" id="blog" aria-labelledby="blog-title">
             <h2 class="blog-title" id="blog-title">ブログ</h2>
-            <p class="intro-note">同人がそれぞれの紹介や文章を投稿し、誌面の外でも言葉を手渡すための記録です。</p>
-            <ul class="member-list" aria-label="投稿者">
-              <li><span>角谷 有一</span><em>MEMBER POSTS</em></li>
-              <li><span>遠藤 雅樹</span><em>MEMBER POSTS</em></li>
-            </ul>
-            <small class="entry-placeholder">投稿は準備中です。WordPressでは、同人ごとに投稿者を分けて登録・公開できます。</small>
+            <ul class="blog-list" aria-label="ブログ記事一覧"></ul>
           </aside>
         </section>
 
@@ -222,7 +213,7 @@
               <article class="folio"><div class="folio-top"><span>NO.4 / COVER</span><span>表紙</span></div><img src="figures-vol4-cover.png" alt="Figures 第4号の表紙" /></article>
               <article class="folio"><div class="folio-top"><span>NO.4 / CONTENTS</span><span>目次</span></div><img src="figures-vol4-toc.png" alt="Figures 第4号の目次" /></article>
             </div>
-            <div class="latest-actions"><a class="download-link" href="Figures_vol4.pdf" download>PDFをダウンロード　→</a><p class="buy-note">冊子ご希望の場合は<a href="#contact">通信欄</a>からお申し込みください。</p></div>
+            <div class="latest-actions"><a class="download-link" href="Figures_vol4.pdf" target="_blank" rel="noopener">PDFを開く　→</a><p class="buy-note">冊子ご希望の場合は<a href="#contact">通信欄</a>からお申し込みください。</p></div>
           </div>
         </section>
 
@@ -230,16 +221,16 @@
           <div class="archive-top"><span>03 / ARCHIVE</span><span>BACK NUMBERS</span></div>
           <h2 id="archive-title">バックナンバー</h2>
           <div class="issues">
-            <article class="issue-card"><div class="spread"><div class="folio"><div class="folio-top"><span>NO.1 / COVER</span><span>表紙</span></div><img src="figures-vol1-cover.png" alt="Figures 第1号の表紙" /></div><div class="folio"><div class="folio-top"><span>NO.1 / CONTENTS</span><span>目次</span></div><img src="figures-vol1-toc.png" alt="Figures 第1号の目次" /></div></div><div class="issue-card-footer"><div><h3>第1号</h3><p>2025年4月号</p></div><a class="download-link" href="Figures_vol1.pdf" download>ダウンロード　→</a></div></article>
-            <article class="issue-card"><div class="spread"><div class="folio"><div class="folio-top"><span>NO.2 / COVER</span><span>表紙</span></div><img src="figures-vol2-cover.png" alt="Figures 第2号の表紙" /></div><div class="folio"><div class="folio-top"><span>NO.2 / CONTENTS</span><span>目次</span></div><img src="figures-vol2-toc.png" alt="Figures 第2号の目次" /></div></div><div class="issue-card-footer"><div><h3>第2号</h3><p>2025年8月号</p></div><a class="download-link" href="Figures_vol2.pdf" download>ダウンロード　→</a></div></article>
-            <article class="issue-card"><div class="spread"><div class="folio"><div class="folio-top"><span>NO.3 / COVER</span><span>表紙</span></div><img src="figures-vol3-cover.png" alt="Figures 第3号の表紙" /></div><div class="folio"><div class="folio-top"><span>NO.3 / CONTENTS</span><span>目次</span></div><img src="figures-vol3-toc.png" alt="Figures 第3号の目次" /></div></div><div class="issue-card-footer"><div><h3>第3号</h3><p>2026年2月号</p></div><a class="download-link" href="Figures_vol3.pdf" download>ダウンロード　→</a></div></article>
+            <article class="issue-card"><div class="spread"><div class="folio"><div class="folio-top"><span>NO.1 / COVER</span><span>表紙</span></div><img src="figures-vol1-cover.png" alt="Figures 第1号の表紙" /></div><div class="folio"><div class="folio-top"><span>NO.1 / CONTENTS</span><span>目次</span></div><img src="figures-vol1-toc.png" alt="Figures 第1号の目次" /></div></div><div class="issue-card-footer"><div><h3>第1号</h3><p>2025年4月号</p></div><a class="download-link" href="Figures_vol1.pdf" target="_blank" rel="noopener">PDFを開く　→</a></div></article>
+            <article class="issue-card"><div class="spread"><div class="folio"><div class="folio-top"><span>NO.2 / COVER</span><span>表紙</span></div><img src="figures-vol2-cover.png" alt="Figures 第2号の表紙" /></div><div class="folio"><div class="folio-top"><span>NO.2 / CONTENTS</span><span>目次</span></div><img src="figures-vol2-toc.png" alt="Figures 第2号の目次" /></div></div><div class="issue-card-footer"><div><h3>第2号</h3><p>2025年8月号</p></div><a class="download-link" href="Figures_vol2.pdf" target="_blank" rel="noopener">PDFを開く　→</a></div></article>
+            <article class="issue-card"><div class="spread"><div class="folio"><div class="folio-top"><span>NO.3 / COVER</span><span>表紙</span></div><img src="figures-vol3-cover.png" alt="Figures 第3号の表紙" /></div><div class="folio"><div class="folio-top"><span>NO.3 / CONTENTS</span><span>目次</span></div><img src="figures-vol3-toc.png" alt="Figures 第3号の目次" /></div></div><div class="issue-card-footer"><div><h3>第3号</h3><p>2026年2月号</p></div><a class="download-link" href="Figures_vol3.pdf" target="_blank" rel="noopener">PDFを開く　→</a></div></article>
           </div>
         </section>
 
         <section class="contact" id="contact" aria-label="通信欄">
           <aside class="section-index" aria-hidden="true"><b>04</b><span>MESSAGE</span></aside>
-          <div class="contact-copy"><span class="section-code">FIGURES / MESSAGE</span><h2 class="contact-title">お問い合わせ</h2><p>冊子のご希望、同人・寄稿について、掲載内容に関するお問い合わせは、通信欄からお寄せください。内容は事務局で確認します。</p></div>
-          <form class="form-panel" id="message-form"><h3>通信欄</h3><p class="form-lead">こちらよりお問い合わせください。</p><div class="form-grid"><div class="field"><label for="name">お名前 <span>（必須）</span></label><input id="name" name="name" required autocomplete="name" /></div><div class="field"><label for="email">E-mail <span>（必須）</span></label><input id="email" name="email" required type="email" autocomplete="email" /></div><div class="field"><label for="type">通信内容の種類</label><select id="type" name="type"><option>冊子の希望</option><option>同人・寄稿について</option><option>Figuresについて</option><option>その他</option></select></div><div class="field"><label for="subject">件名</label><input id="subject" name="subject" /></div><div class="field full"><label for="message">通信内容 <span>（必須）</span></label><textarea id="message" name="message" required></textarea></div></div><div class="form-confirm"><div class="field"><label for="check-word">確認のため「Figures」と入力してください。</label><input id="check-word" name="check-word" required /></div></div><label class="consent"><input type="checkbox" required />入力内容を事務局が確認することに同意します。</label><button class="send-button" type="submit">内容を確認して送信　→</button><p class="form-status" id="form-status" aria-live="polite"></p></form>
+          <div class="contact-copy"><span class="section-code">FIGURES / MESSAGE</span><h2 class="contact-title">お問い合わせ</h2><p>冊子のご希望、ご感想、連絡等は、通信欄からお寄せください。</p></div>
+          <form class="form-panel" id="message-form"><h3>通信欄</h3><p class="form-lead">こちらよりお問い合わせください。</p><div class="form-grid"><div class="field"><label for="name">お名前 <span>（必須）</span></label><input id="name" name="name" required autocomplete="name" /></div><div class="field"><label for="email">E-mail <span>（必須）</span></label><input id="email" name="email" required type="email" autocomplete="email" /></div><div class="field"><label for="type">通信内容の種類</label><select id="type" name="type"><option>冊子の希望</option><option>Figuresについて</option><option>その他</option></select></div><div class="field"><label for="subject">件名</label><input id="subject" name="subject" /></div><div class="field full"><label for="message">通信内容 <span>（必須）</span></label><textarea id="message" name="message" required></textarea></div></div><div class="form-confirm"><div class="field"><label for="check-word">確認のため「Figures」と入力してください。</label><input id="check-word" name="check-word" required /></div></div><button class="send-button" type="submit">内容を確認して送信　→</button><p class="form-status" id="form-status" aria-live="polite"></p></form>
         </section>
       </main>
 
