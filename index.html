@@ -238,8 +238,8 @@
 
         <section class="contact" id="contact" aria-label="通信欄">
           <aside class="section-index" aria-hidden="true"><b>04</b><span>MESSAGE</span></aside>
-          <div class="contact-copy"><span class="section-code">FIGURES / MESSAGE</span><h2 class="contact-title">お問い合わせ</h2><p>冊子のご希望、同人・寄稿について、掲載内容に関するお問い合わせは、通信欄からお寄せください。内容は編集部で確認します。</p></div>
-          <form class="form-panel" id="message-form"><h3>通信欄</h3><p class="form-lead">北斗HPの問い合わせ構成に準じた入力項目です。</p><div class="form-grid"><div class="field"><label for="name">お名前 <span>（必須）</span></label><input id="name" name="name" required autocomplete="name" /></div><div class="field"><label for="email">E-mail <span>（必須）</span></label><input id="email" name="email" required type="email" autocomplete="email" /></div><div class="field"><label for="type">通信内容の種類</label><select id="type" name="type"><option>冊子の希望</option><option>同人・寄稿について</option><option>Figuresについて</option><option>その他</option></select></div><div class="field"><label for="subject">件名</label><input id="subject" name="subject" /></div><div class="field full"><label for="message">通信内容 <span>（必須）</span></label><textarea id="message" name="message" required></textarea></div></div><div class="form-confirm"><div class="field"><label for="check-word">確認のため「Figures」と入力してください。</label><input id="check-word" name="check-word" required /></div></div><label class="consent"><input type="checkbox" required />入力内容を編集部が確認することに同意します。</label><button class="send-button" type="submit">内容を確認して送信　→</button><p class="form-status" id="form-status" aria-live="polite"></p></form>
+          <div class="contact-copy"><span class="section-code">FIGURES / MESSAGE</span><h2 class="contact-title">お問い合わせ</h2><p>冊子のご希望、同人・寄稿について、掲載内容に関するお問い合わせは、通信欄からお寄せください。内容は事務局で確認します。</p></div>
+          <form class="form-panel" id="message-form"><h3>通信欄</h3><p class="form-lead">こちらよりお問い合わせください。</p><div class="form-grid"><div class="field"><label for="name">お名前 <span>（必須）</span></label><input id="name" name="name" required autocomplete="name" /></div><div class="field"><label for="email">E-mail <span>（必須）</span></label><input id="email" name="email" required type="email" autocomplete="email" /></div><div class="field"><label for="type">通信内容の種類</label><select id="type" name="type"><option>冊子の希望</option><option>同人・寄稿について</option><option>Figuresについて</option><option>その他</option></select></div><div class="field"><label for="subject">件名</label><input id="subject" name="subject" /></div><div class="field full"><label for="message">通信内容 <span>（必須）</span></label><textarea id="message" name="message" required></textarea></div></div><div class="form-confirm"><div class="field"><label for="check-word">確認のため「Figures」と入力してください。</label><input id="check-word" name="check-word" required /></div></div><label class="consent"><input type="checkbox" required />入力内容を事務局が確認することに同意します。</label><button class="send-button" type="submit">内容を確認して送信　→</button><p class="form-status" id="form-status" aria-live="polite"></p></form>
         </section>
       </main>
 
@@ -251,7 +251,7 @@
         const status = document.getElementById("form-status");
         const word = document.getElementById("check-word").value.trim().toLowerCase();
         if (word !== "figures") { status.textContent = "確認用語句として「Figures」を入力してください。"; return; }
-        status.textContent = "HTMLプレビューでは送信されません。WordPress公開時に編集部の受信先を設定します。";
+        status.textContent = "HTMLプレビューでは送信されません。WordPress公開時に事務局の受信先を設定します。";
       });
     </script>
   </body>
