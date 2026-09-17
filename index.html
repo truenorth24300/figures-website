@@ -55,12 +55,12 @@
       .history { max-width: 590px; border-top: 1px solid var(--ink); }
       .history-row { display: grid; grid-template-columns: 92px 1fr; gap: 18px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 12px; line-height: 1.85; }
       .history-row b { color: var(--teal); font: 500 12px var(--display); letter-spacing: .1em; }
-      .history-row ul { display: flex; flex-wrap: wrap; gap: 4px 17px; margin: 0; padding: 0; list-style: none; }
-      .history-row li::before { color: var(--teal); content: "・"; }
+      .history-row .members { line-height: 1.85; }
+      .history-row .price-note { color: var(--muted); font-size: 11px; }
       .hero-intro { display: flex; flex-direction: column; justify-content: flex-start; min-width: 0; padding: 80px max(32px,var(--gutter)) 60px 34px; border-left: 1px solid var(--line); background: var(--teal); color: #f6f7f1; }
-      .hero-intro .blog-title { margin: 0; color: #fffefa; font: 500 clamp(34px,3.1vw,46px)/1.1 var(--serif); letter-spacing: -.06em; }
+      .hero-intro .blog-title { margin: 0; color: #fffefa; font: 500 clamp(22px,2.15vw,31px)/1.25 var(--serif); letter-spacing: -.04em; }
       /* WordPressでは、日付とタイトルのみのブログ一覧をこの枠に表示する。 */
-      .blog-list { margin: 43px 0 0; padding: 0; border-top: 1px solid rgba(255,255,255,.36); list-style: none; }
+      .blog-list { margin: 32px 0 0; padding: 0; border-top: 1px solid rgba(255,255,255,.36); list-style: none; }
       .blog-list li { border-bottom: 1px solid rgba(255,255,255,.26); }
       .blog-list a { display: grid; grid-template-columns: 76px 1fr; gap: 12px; padding: 12px 0; color: #f6f7f1; font-size: 12px; line-height: 1.55; }
       .blog-list time { color: #afd2c7; font: 500 10px var(--display); letter-spacing: .08em; }
@@ -178,7 +178,7 @@
   </head>
   <body>
     <div class="site">
-      <div class="preview-ribbon"><span><b>FIGURES / SITE IMAGE</b>　既刊PDFを反映した公式サイト構成のHTMLプレビューです。</span><span>REVIEW EDITION / 2026.09</span></div>
+      <div class="preview-ribbon"><span><b>FIGURES / SITE IMAGE</b>　既刊PDFを反映した公式サイト構成のHTMLプレビューです。</span><span>REVIEW EDITION / 2026.09.18</span></div>
       <header class="site-header">
         <div class="header-inner">
           <a class="parent-link" href="https://digital-research.co.jp/" target="_blank" rel="noreferrer">DIGITAL RESEARCH ↗</a>
@@ -195,12 +195,13 @@
             <p class="subtitle">revue littéraire</p>
             <div class="history" aria-label="Figuresの沿革と発行情報">
               <div class="history-row"><b>沿革</b><span>2025年（令和8年）4月30日創刊</span></div>
-              <div class="history-row"><b>同人</b><ul><li>角谷 有一</li><li>遠藤 雅樹</li></ul></div>
+              <div class="history-row"><b>同人</b><span class="members">角谷有一<br />遠藤雅樹</span></div>
+              <div class="history-row"><b>頒価</b><span>500円（送料込み）<br /><small class="price-note">＊ダウンロード版は無料です。</small></span></div>
               <div class="history-row"><b>発行情報</b><span>編集発行人：遠藤 雅樹<br />発行所：（有）デジタルリサーチ<br />印刷：東海共同印刷</span></div>
             </div>
           </div>
           <aside class="hero-intro" id="blog" aria-labelledby="blog-title">
-            <h2 class="blog-title" id="blog-title">ブログ</h2>
+            <h2 class="blog-title" id="blog-title">Figuresの余白に</h2>
             <ul class="blog-list" aria-label="ブログ記事一覧"></ul>
           </aside>
         </section>
